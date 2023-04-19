@@ -22,6 +22,10 @@ class ZodiakController {
         console.log(dateOfBirth);
         console.log(zodiacs);
         const zodiac = (await (zodiacs.find((zodiak) => dateOfBirth >= zodiak.start && dateOfBirth <= zodiak.end)));
+        
+        if (!zodiac) {
+            return res.status(400).json({ error: "Не удалось определить знак зодиака." });
+        }
         res.status(200).json({ zodiac: zodiac.name });
     }
 }
