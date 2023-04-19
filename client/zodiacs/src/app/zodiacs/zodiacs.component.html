@@ -1,3 +1,10 @@
-<div class="choose">Выберите дату</div>
-<input type="date" [(ngModel)]="myDate">
-<button type="button" class="btn btn-outline-primary" (click)="getDate()">Узнать знак зодиака</button>
+<div class="wrapper">
+  <img [src]="imgUrl" width="60%" />
+  <div class="choose">Выберите дату</div>
+  <div>
+    <input type="date" [(ngModel)]="myDate" />
+  </div>
+  <button type="button" class="btn btn-outline-primary" (click)="getDate()">
+    Узнать знак зодиака
+  </button>
+</div>
