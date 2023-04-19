@@ -10,15 +10,15 @@ export class ZodiacsComponent {
   async getDate(){
     let data = "";
     const requestOptions = {
-      method: 'GET',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-      date: this.myDate
+        date: this.myDate
       })
     };
-    await fetch('http://localhost:3000',requestOptions)
+    await fetch('http://localhost:3000/zodiak',requestOptions)
       .then(response => response.json())
-      .then(res=>data=res);
+      .then(res=>data=res.zodiac);
     alert(data);
   }
 }
