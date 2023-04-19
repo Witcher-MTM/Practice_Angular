@@ -2,7 +2,7 @@ class ZodiakController {
     // ...
 
     async FindZodiak(req, res) {
-        const { day, month , year } = req.body;
+        const { day, month , year } = req.body.date;
         console.log("Month: " + month + "\nDay: " + day)
         const dateOfBirth = new Date(`${year}-${month}-${day}`);
         const zodiacs = [
